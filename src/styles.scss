@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "mixins.scss";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    outline: none !important;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: Roboto;
+    margin: 0;
+}
+
+input, button {
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}

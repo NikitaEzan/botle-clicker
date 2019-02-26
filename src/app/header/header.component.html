@@ -1,0 +1,25 @@
+<header [ngClass]="{'search-active': searchOpen == true}">
+  <a href="" class="logo">
+    <img src="/assets/header/logo.webp" alt="Tile Expert">
+  </a>
+  <div class="header-center-tools">
+    <app-gorizontal-menu></app-gorizontal-menu>
+
+    <app-header-search (openSearch)="searchEvent($event)"></app-header-search>
+
+    <a href="" class="add-something">
+      <img src="/assets/icons/add-circle.svg" alt="">
+    </a>
+
+  </div>
+  <div class="header-right-tools">
+    <a href="mailto:test@test.ru" class="mail-icon">
+      <img src="/assets/icons/mail-post.svg" alt="">
+    </a>
+    <a class="notification-icon">
+      <img src="/assets/icons/notification.svg" alt="">
+      <span class="notification-icon__count">10</span>
+    </a>
+    <a class="profile-icon"><img src="/assets/profile.webp" alt="Profile"></a>
+  </div>
+</header>

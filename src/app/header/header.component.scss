@@ -1,0 +1,166 @@
+@import "/../../mixins.scss";
+
+header {
+    @include base-transition(height);
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    background-color: #4876c3;
+    padding: 0 20px;
+
+    @include at-only-xs {
+        height: 119px;
+    }
+
+    @include at-xs {
+        flex-direction: column;
+    }
+
+    @include at-sm {
+        flex-direction: row;
+        height: 62px;
+    }
+}
+
+header.search-active {
+    @include at-only-xs {
+        height: 60px;
+
+        .header-right-tools {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
+.logo {
+    align-self: flex-start;
+    margin-top: 20px;
+
+    @include at-xs {
+        width: 177px;
+        height: 32px;
+    }
+
+    @include at-sm {
+        width: 145px;
+        height: 26px;
+    }
+
+    @include at-md {
+        width: 193px;
+        height: 34px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.header-center-tools {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    
+    @include at-sm {
+        position: relative;
+        margin-right: auto;
+        margin-left: 39px;
+    }
+
+    @include at-md {
+        margin-left: 86px;
+    }
+
+    @include at-lg {
+        margin-left: 113px;
+    }
+}
+
+.header-right-tools {
+    @include base-transition((visible, opacity));
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // margin-left: auto;
+
+    @include at-only-xs {
+        position: absolute;
+        bottom: 0;
+    }
+
+    @include at-xs {
+        margin-top: 24px;
+        margin-bottom: 13px;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    @include at-sm {
+        width: auto;
+        justify-content: flex-start;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &>a {
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    
+}
+
+.notification-icon {
+    position: relative;
+}
+
+.notification-icon__count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: #b71826;
+    font-size: 10px;
+    color: white;
+}
+
+.add-something {
+    display: none;
+    width: 20px;
+    height: 20px;
+
+    @include at-sm {
+        display: flex;
+        margin-left: 13px;
+    }
+
+    @include at-md {
+        margin-left: 20px;
+    }
+}
+
+// TODO: move to separate component
+.profile-icon {
+    display: flex;
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    img {
+        width: 100%;
+    }
+}

@@ -1,0 +1,51 @@
+<div class="search header__search-container" [ngClass]="{'active': isActive == true}" (clickOutside)="onClickedOutside($event)">
+    <a class="search__icon" (click)="clickSearchButton()">
+      <img src="/assets/icons/search.svg" alt="">
+    </a>
+    <div class="search__input-wrapper">
+      <div class="search__input">
+        <input type="search" #searchField (focus)="searchFocus()" (focusout)="searchFocusOut($event)">
+        <button type="submit">Найти</button>
+      </div>
+      <img class="search__input__inner-search-icon" src="/assets/icons/search-gray.svg" alt="">
+    
+    </div>
+    <div class="search__input-tools" (clickOutside)="inputToolsOutClick($event)" tabindex="0" [ngClass]="{'active': onFocus == true}">
+        <div class="input-tools-item" >
+          <div class="input-tools-item__field">
+            <label class="custom-checkbocks">
+              <p>мои</p>
+              <input type="checkbox" name="only-own">
+              <span class="checkmark"></span>
+            </label>
+            <input type="text" name="author-name" placeholder="Автор">
+          </div>
+
+          <div class="input-tools-item__field select-wrap">
+            <p>Сортировать по:</p>
+            <select name="sort-by" id="select-input">
+              <option value="1">Дате</option>
+              <option value="2">Популярности</option>
+            </select>
+          </div>
+          <div class="input-tools-item__field group-checkbox">
+            <label class="custom-checkbocks">
+              <p>я участник</p>
+              <input type="checkbox" name="only-own">
+              <span class="checkmark"></span>
+            </label>
+            <label class="custom-checkbocks">
+                <p>в заголовке</p>
+                <input type="checkbox" checked name="only-own">
+                <span class="checkmark"></span>
+            </label>
+            <label class="custom-checkbocks">
+              <p>строгий поиск</p>
+              <input type="checkbox" name="only-own">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    
+  </div>
