@@ -122,16 +122,24 @@
     left: 0;
     right: 20px;
     padding: 18px;
+    width: 0;
+    overflow: hidden;
 
     &.active {
         visibility: visible;
+        overflow: auto;
         opacity: 1;
+        width: auto;
+
+        @include at-sm {
+            width: 422px;
+        }
+
     }
 
     @include at-sm {
         left: -10px;
         right: auto;
-        width: 422px;
     }
 
     @include at-md {
